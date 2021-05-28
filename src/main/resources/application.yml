@@ -1,17 +1,17 @@
-# ÅäÖÃ¶Ë¿Ú
+# é…ç½®ç«¯å£
 server:
   port: 8000
 spring:
-  # ÅäÖÃÊı¾İÔ´
+  # é…ç½®æ•°æ®æº
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/eteclms?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false
     username: root
     password: Lansiling11~
     type: com.alibaba.druid.pool.DruidDataSource
-  # RedisÊı¾İÔ´
+  # Redisæ•°æ®æº
   redis:
-    # RedisÊı¾İ¿âË÷Òı£¨Ä¬ÈÏÎª0£©
+    # Redisæ•°æ®åº“ç´¢å¼•ï¼ˆé»˜è®¤ä¸º0ï¼‰
     database: 1
     host: localhost
     port: 6379
@@ -19,41 +19,41 @@ spring:
     password: 123456
     jedis:
       pool:
-        max-active: 1000  # Á¬½Ó³Ø×î´óÁ¬½ÓÊı£¨Ê¹ÓÃ¸ºÖµ±íÊ¾Ã»ÓĞÏŞÖÆ£©
-        max-wait: -1      # Á¬½Ó³Ø×î´ó×èÈûµÈ´ıÊ±¼ä£¨Ê¹ÓÃ¸ºÖµ±íÊ¾Ã»ÓĞÏŞÖÆ£©
-        max-idle: 10      # Á¬½Ó³ØÖĞµÄ×î´ó¿ÕÏĞÁ¬½Ó
-        min-idle: 5       # Á¬½Ó³ØÖĞµÄ×îĞ¡¿ÕÏĞÁ¬½Ó
-    # sa-tokenÅäÖÃ
+        max-active: 1000  # è¿æ¥æ± æœ€å¤§è¿æ¥æ•°ï¼ˆä½¿ç”¨è´Ÿå€¼è¡¨ç¤ºæ²¡æœ‰é™åˆ¶ï¼‰
+        max-wait: -1      # è¿æ¥æ± æœ€å¤§é˜»å¡ç­‰å¾…æ—¶é—´ï¼ˆä½¿ç”¨è´Ÿå€¼è¡¨ç¤ºæ²¡æœ‰é™åˆ¶ï¼‰
+        max-idle: 10      # è¿æ¥æ± ä¸­çš„æœ€å¤§ç©ºé—²è¿æ¥
+        min-idle: 5       # è¿æ¥æ± ä¸­çš„æœ€å°ç©ºé—²è¿æ¥
+    # sa-tokené…ç½®
     sa-token:
-      # tokenÃû³Æ (Í¬Ê±Ò²ÊÇcookieÃû³Æ)
+      # tokenåç§° (åŒæ—¶ä¹Ÿæ˜¯cookieåç§°)
       token-name: satoken
-      # tokenÓĞĞ§ÆÚ£¬µ¥Î»s Ä¬ÈÏ30Ìì, -1´ú±íÓÀ²»¹ıÆÚ
+      # tokenæœ‰æ•ˆæœŸï¼Œå•ä½s é»˜è®¤30å¤©, -1ä»£è¡¨æ°¸ä¸è¿‡æœŸ
       timeout: 2592000
-      # tokenÁÙÊ±ÓĞĞ§ÆÚ (Ö¸¶¨Ê±¼äÄÚÎŞ²Ù×÷¾ÍÊÓÎªtoken¹ıÆÚ) µ¥Î»: Ãë
+      # tokenä¸´æ—¶æœ‰æ•ˆæœŸ (æŒ‡å®šæ—¶é—´å†…æ— æ“ä½œå°±è§†ä¸ºtokenè¿‡æœŸ) å•ä½: ç§’
       activity-timeout: -1
-      # ÊÇ·ñÔÊĞíÍ¬Ò»ÕËºÅ²¢·¢µÇÂ¼ (ÎªtrueÊ±ÔÊĞíÒ»ÆğµÇÂ¼, ÎªfalseÊ±ĞÂµÇÂ¼¼·µô¾ÉµÇÂ¼)
+      # æ˜¯å¦å…è®¸åŒä¸€è´¦å·å¹¶å‘ç™»å½• (ä¸ºtrueæ—¶å…è®¸ä¸€èµ·ç™»å½•, ä¸ºfalseæ—¶æ–°ç™»å½•æŒ¤æ‰æ—§ç™»å½•)
       allow-concurrent-login: false
-      # ÔÚ¶àÈËµÇÂ¼Í¬Ò»ÕËºÅÊ±£¬ÊÇ·ñ¹²ÓÃÒ»¸ötoken (ÎªtrueÊ±ËùÓĞµÇÂ¼¹²ÓÃÒ»¸ötoken, ÎªfalseÊ±Ã¿´ÎµÇÂ¼ĞÂ½¨Ò»¸ötoken)
+      # åœ¨å¤šäººç™»å½•åŒä¸€è´¦å·æ—¶ï¼Œæ˜¯å¦å…±ç”¨ä¸€ä¸ªtoken (ä¸ºtrueæ—¶æ‰€æœ‰ç™»å½•å…±ç”¨ä¸€ä¸ªtoken, ä¸ºfalseæ—¶æ¯æ¬¡ç™»å½•æ–°å»ºä¸€ä¸ªtoken)
       is-share: false
-      # token·ç¸ñ
+      # tokené£æ ¼
       token-style: uuid
-# mybatis-plusÏà¹ØÅäÖÃ
+# mybatis-plusç›¸å…³é…ç½®
 mybatis-plus:
-  # xmlÉ¨Ãè£¬¶à¸öÄ¿Â¼ÓÃ¶ººÅ»òÕß·ÖºÅ·Ö¸ô£¨¸æËß Mapper Ëù¶ÔÓ¦µÄ XML ÎÄ¼şÎ»ÖÃ£©
+  # xmlæ‰«æï¼Œå¤šä¸ªç›®å½•ç”¨é€—å·æˆ–è€…åˆ†å·åˆ†éš”ï¼ˆå‘Šè¯‰ Mapper æ‰€å¯¹åº”çš„ XML æ–‡ä»¶ä½ç½®ï¼‰
   mapper-locations: classpath:mapper/*.xml
-  # ÒÔÏÂÅäÖÃ¾ùÓĞÄ¬ÈÏÖµ,¿ÉÒÔ²»ÉèÖÃ
+  # ä»¥ä¸‹é…ç½®å‡æœ‰é»˜è®¤å€¼,å¯ä»¥ä¸è®¾ç½®
   global-config:
     db-config:
-      #Ö÷¼üÀàĞÍ AUTO:"Êı¾İ¿âID×ÔÔö" INPUT:"ÓÃ»§ÊäÈëID",ID_WORKER:"È«¾ÖÎ¨Ò»ID (Êı×ÖÀàĞÍÎ¨Ò»ID)", UUID:"È«¾ÖÎ¨Ò»ID UUID";
+      #ä¸»é”®ç±»å‹ AUTO:"æ•°æ®åº“IDè‡ªå¢" INPUT:"ç”¨æˆ·è¾“å…¥ID",ID_WORKER:"å…¨å±€å”¯ä¸€ID (æ•°å­—ç±»å‹å”¯ä¸€ID)", UUID:"å…¨å±€å”¯ä¸€ID UUID";
       id-type: auto
-      #×Ö¶Î²ßÂÔ IGNORED:"ºöÂÔÅĞ¶Ï"  NOT_NULL:"·Ç NULL ÅĞ¶Ï")  NOT_EMPTY:"·Ç¿ÕÅĞ¶Ï"
+      #å­—æ®µç­–ç•¥ IGNORED:"å¿½ç•¥åˆ¤æ–­"  NOT_NULL:"é NULL åˆ¤æ–­")  NOT_EMPTY:"éç©ºåˆ¤æ–­"
       field-strategy: NOT_EMPTY
-      #Êı¾İ¿âÀàĞÍ
+      #æ•°æ®åº“ç±»å‹
       db-type: MYSQL
   configuration:
-    # ÊÇ·ñ¿ªÆô×Ô¶¯ÍÕ·åÃüÃû¹æÔòÓ³Éä:´ÓÊı¾İ¿âÁĞÃûµ½JavaÊôĞÔÍÕ·åÃüÃûµÄÀàËÆÓ³Éä
+    # æ˜¯å¦å¼€å¯è‡ªåŠ¨é©¼å³°å‘½åè§„åˆ™æ˜ å°„:ä»æ•°æ®åº“åˆ—ååˆ°Javaå±æ€§é©¼å³°å‘½åçš„ç±»ä¼¼æ˜ å°„
     map-underscore-to-camel-case: true
-    # ·µ»ØmapÊ±true:µ±²éÑ¯Êı¾İÎª¿ÕÊ±×Ö¶Î·µ»ØÎªnull,false:²»¼ÓÕâ¸ö²éÑ¯Êı¾İÎª¿ÕÊ±£¬×Ö¶Î½«±»Òş²Ø
+    # è¿”å›mapæ—¶true:å½“æŸ¥è¯¢æ•°æ®ä¸ºç©ºæ—¶å­—æ®µè¿”å›ä¸ºnull,false:ä¸åŠ è¿™ä¸ªæŸ¥è¯¢æ•°æ®ä¸ºç©ºæ—¶ï¼Œå­—æ®µå°†è¢«éšè—
     call-setters-on-nulls: true
-    # Õâ¸öÅäÖÃ»á½«Ö´ĞĞµÄsql´òÓ¡³öÀ´£¬ÔÚ¿ª·¢»ò²âÊÔµÄÊ±ºò¿ÉÒÔÓÃ
+    # è¿™ä¸ªé…ç½®ä¼šå°†æ‰§è¡Œçš„sqlæ‰“å°å‡ºæ¥ï¼Œåœ¨å¼€å‘æˆ–æµ‹è¯•çš„æ—¶å€™å¯ä»¥ç”¨
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
